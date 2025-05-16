@@ -1,0 +1,386 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <title>Fast HR Payroll - Home</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <%--<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />--%>
+    <link href="css/semantic.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-timepicker-addon.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css" />
+    <link href="css/themify-icons.css" rel="stylesheet" type="text/css" />
+    <link href="css/flash.css" rel="stylesheet" type="text/css" />
+    <link href="css/opensans.css" rel="stylesheet" type="text/css" />
+    <link href="css/alegreyasans.css" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/2a68127dda.js" crossorigin="anonymous" type="text/javascript" />
+    <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="sidebar-mini  pace-done">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div class="pace  pace-inactive">
+            <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+                <div class="pace-progress-inner">
+                </div>
+            </div>
+            <div class="pace-activity">
+            </div>
+        </div>
+        <script src="js/languageInit.js" type="text/javascript"></script>
+        <div class="wrapper">
+            <header class="main-header">
+                <a class="logo">
+                    <span class="logo-mini">
+                        <asp:Image ID="ImgLogoMini" runat="server" ImageUrl="~/images/hms2.png" AlternateText="Logo" />
+
+                    </span>
+                    <span class="logo-lg">
+                        <asp:Image ID="ImgLogoLarge" runat="server" ImageUrl="~/images/hms2.png" AlternateText="Logo" />
+
+                    </span>
+                </a>
+
+                <nav class="navbar navbar-static-top">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fas fa-keyboard"></span>
+                    </a>
+                    <%--<div>
+<span style="margin-bottom: 200px;">
+Institute of Holistic Rehabilitation and Inclusion - IHRI</span>
+</div>--%>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            <li class="dropdown dropdown-user">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-fw"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Profile.aspx"><i class="fas fa-user"></i>&nbsp;&nbsp;Profile</a></li>
+                                    <li><a href="ChangePass.aspx"><i class="fas fa-key"></i>Update Password</a></li>
+                                    <li><a id="lnkSignout" runat="server"><i class="fas fa-power-off"></i>Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <aside class="main-sidebar">
+
+                <div class="sidebar" style="height: auto;">
+
+                    <div class="user-panel text-center">
+                        <div class="image">
+                            <asp:Image ID="ImgUser" runat="server" ImageUrl="~/images/users/2.png" AlternateText="Username" />
+                            <%--<img src="images/doctor/no-photo.png" class="img-circle" alt="User Image"/>--%>
+                        </div>
+                        <div class="info">
+                            <p>
+                                <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                            </p>
+                            <a><i class="fa fa-circle text-success"></i>
+                                <asp:Label ID="lblUserRole" runat="server" Text="active"></asp:Label>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <ul class="sidebar-menu">
+                        <li class="#">
+                            <a id="lnkDashboard" runat="server"><i class="fas fa-home"></i>Dashboard</a>
+                        </li>
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-user-check"></i><span>Attendance</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a id="lnkAttendanceForm" runat="server">Attendance Form</a></li>
+                                <li><a id="lnkAttendanceLog" runat="server">Attendance Log</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-cogs"></i><span>Setup</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a href="#">Reference Information <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkRefInfo" runat="server">Add Reference Information</a></li>
+                                        <li class=""><a id="lnkRefList" runat="server">View Reference Information</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Room <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkRoom1" runat="server">Add Room</a></li>
+                                        <li class=""><a id="lnkRoom2" runat="server">View Room</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Area <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkArea" runat="server">Add Area</a></li>
+                                        <li class=""><a id="lnkArea2" runat="server">View Area</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">User <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkUser" runat="server">Add User</a></li>
+                                        <li class=""><a id="lnkUser2" runat="server">View User</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">City<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkCity" runat="server">Add City</a></li>
+                                        <li class=""><a id="lnkCity2" runat="server">View City</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-stethoscope"></i><span>Consultant</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a>Consultant Information<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkCon" runat="server">Add Consultant</a></li>
+                                        <li class=""><a id="lnkCon2" runat="server">View Consultant</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-hospital-alt"></i><span>Admission</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a href="#">Admission Infomation<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkAdmit" runat="server">Admit Patient</a></li>
+                                        <li class=""><a id="lnkAdmit2" runat="server">Patients List</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="Admission_report.aspx">Admission Report</a>
+
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-procedures"></i><span>In-Patient</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a href="InPatientSummary.aspx">In-Patient Summary</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">Ultrasound <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="U1" runat="server">Add Ultrasound</a></li>
+                                        <li class=""><a id="U2" runat="server">View Ulltrasound</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Medical Services <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="M1" runat="server">Add Medical Services</a></li>
+                                        <li class=""><a id="M2" runat="server">View Medical Services</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">X-RAY <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkInXray" runat="server">Add X-RAY</a></li>
+                                        <li class=""><a id="lnkInXray2" runat="server">View X-RAY</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Dental <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkDental" runat="server">Add Dental</a></li>
+                                        <li class=""><a id="lnkDental2" runat="server">View Dental</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-wheelchair"></i><span>Discharge</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a>Discharge Information <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkDis" runat="server">Discharge Patient</a></li>
+                                        <li class=""><a id="lnkDis2" runat="server">Discharge List</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="Discharge_report1.aspx">Discharge Report</a>
+
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-money-bill-wave"></i><span>Billing</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a>Advance Information <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkadvInfo" runat="server">Add Advance Information</a></li>
+                                        <li class=""><a id="lnkadvHis" runat="server">View Advance History</a></li>
+                                    </ul>
+                                </li>
+                       
+                                <li class="">
+                                    <a>Billing <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="A1" runat="server">Add Billing</a></li>
+                                        <li class=""><a id="A2" runat="server">View Billing</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fas fa-hospital-user"></i><span>Out-Patient</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="">
+                                    <a href="#">Consultation<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkcons" runat="server">Add Consultation</a></li>
+                                        <li class=""><a id="lnkcons2" runat="server">View Consultation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">X-Ray<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="X1" runat="server">Add X-Ray</a></li>
+                                        <li class=""><a id="X2" runat="server">View X-Ray</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Ultrasound<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkUltrasound" runat="server">Add Ultrasound</a></li>
+                                        <li class=""><a id="lnkUltrasound2" runat="server">View Ultrasound</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Medical Services<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="lnkMed" runat="server">Add Medical Services</a></li>
+                                        <li class=""><a id="lnkMed2" runat="server">View Medical Services</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#">Dental<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li class=""><a id="D1" runat="server">Add Dental</a></li>
+                                        <li class=""><a id="D2" runat="server">View Dental</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </aside>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer class="main-footer">
+                2022 @Copyright <a href="http://netsolonline.com" target="_blank">Netsol Online.</a>
+
+            </footer>
+        </div>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/pace.min.js" type="text/javascript"></script>
+        <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-sliderAccess.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-timepicker-addon.min.js" type="text/javascript"></script>
+        <script src="js/select2.min.js" type="text/javascript"></script>
+        <script src="js/Chart.min.js" type="text/javascript"></script>
+        <script src="js/semantic.min.js" type="text/javascript"></script>
+        <script src="js/dataTables.min.js" type="text/javascript"></script>
+        <script src="js/tinymce.min.js" type="text/javascript"></script>
+        <script src="js/tableHeadFixer.js" type="text/javascript"></script>
+        <script src="js/frame.js" type="text/javascript"></script>
+        <script src="js/custom.js?v=1" type="text/javascript"></script>
+        <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+        </div>
+    </form>
+</body>
+</html>

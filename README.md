@@ -1,10 +1,12 @@
-#Hospital Management System
+Hospital Management System
 
 1.	Introduction
 The Hospital Management System (HMS) is a web-based application designed to streamline hospital operations, including patient admissions, billing, discharge, in-patient services, outpatient services, consultant information, attendance record and setup screens. This system will help hospitals improve efficiency, reduce paperwork, and ensure seamless patient record management.
-2.	Problem Statement
-Traditional hospital record-keeping is paper-based, leading to data mismanagement, manual errors, and delays in patient services. There is a need for a centralized system that automates patient admission, treatment tracking, billing, and discharge processes while ensuring secure and efficient data management
-3.	Features of the project
+
+3.	Problem Statement
+Traditional hospital record-keeping is paper-based, leading to data mismanagement, manual errors, and delays in patient services. There is a need for a centralized system that automates patient admission, treatment tracking, billing, and discharge processes while ensuring secure and efficient data management.
+
+5.	Features of the project
 •	Secure Login System – Role-based authentication for different users. 
 •	Setup Module – Add room, area, city and users. 
 •	Patient Admission & Registration – Record new admissions and maintain history. 
